@@ -66,5 +66,23 @@ public class RulePair {
 			&& this.macdst.equals(pair.macdst)
 			&& this.port.equals(pair.port);
 	}
+	
+	public String toString(){
+		String result="[ ";
+		if(!ipsrc.equals(IPv4Address.of("1.2.3.4"))){
+			result+=" ip_src:"+ipsrc;
+		}
+		if(!ipdst.equals(IPv4Address.of("1.2.3.4"))){
+			result+=" ip_dst:"+ipdst;
+		}
+		if(!macsrc.equals(MacAddress.of("00:01:6C:06:A6:29"))){
+			result+=" mac_src:"+macsrc;
+		}
+		if(!macdst.equals(MacAddress.of("00:01:6C:06:A6:29"))){
+			result+=" mac_dst:"+macdst;
+		}
+		result+=" ]";
+		return result;
+	}
 
 }

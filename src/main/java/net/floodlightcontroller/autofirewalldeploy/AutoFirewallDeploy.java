@@ -68,7 +68,7 @@ public class AutoFirewallDeploy implements IFloodlightModule,IOFMessageListener{
 	public net.floodlightcontroller.core.IListener.Command receive(
 			IOFSwitch sw, OFMessage msg, FloodlightContext cntx) {
 		// TODO Auto-generated method stub
-		System.out.println("in AutoFirewallDeploy");
+//		System.out.println("in AutoFirewallDeploy");
 	     Ethernet eth =
 	                IFloodlightProviderService.bcStore.get(cntx,
 	                                            IFloodlightProviderService.CONTEXT_PI_PAYLOAD);
@@ -126,8 +126,16 @@ public class AutoFirewallDeploy implements IFloodlightModule,IOFMessageListener{
 		    macAddresses = new ConcurrentSkipListSet<Long>();
 		    logger = LoggerFactory.getLogger(AutoFirewallDeploy.class);
 		    decision_map=new HashMap<>();
-		    decision_map.put(new RulePair.Builder().srcIp(IPv4Address.of("10.0.0.1")).dstIp(IPv4Address.of("10.0.0.2")).build(), Decision.DENY);
-		    decision_map.put(new RulePair.Builder().srcIp(IPv4Address.of("10.0.0.2")).dstIp(IPv4Address.of("10.0.0.1")).build(), Decision.DENY);
+		    decision_map.put(new RulePair.Builder()
+		    					.srcIp(IPv4Address.of("10.0.0.1"))
+		    					.dstIp(IPv4Address.of("10.0.0.2"))
+		    					.build(), 
+		    					Decision.ALLOW);
+		    decision_map.put(new RulePair.Builder()
+		    					.srcIp(IPv4Address.of("10.0.0.2"))
+		    					.dstIp(IPv4Address.of("10.0.0.1"))
+		    					.build(),
+		    					Decision.ALLOW);
 	}
 
 	@Override

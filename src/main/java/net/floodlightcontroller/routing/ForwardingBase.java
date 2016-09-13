@@ -165,7 +165,7 @@ public abstract class ForwardingBase implements IOFMessageListener {
 			if (cntx != null) {
 				decision = RoutingDecision.rtStore.get(cntx, IRoutingDecision.CONTEXT_DECISION);
 			}
-			System.out.println("in forwardingbase ");
+//			System.out.println("in forwardingbase ");
 
 			return this.processPacketInMessage(sw, (OFPacketIn) msg, decision, cntx);
 		default:

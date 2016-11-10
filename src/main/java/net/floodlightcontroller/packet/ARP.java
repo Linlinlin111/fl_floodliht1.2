@@ -33,7 +33,7 @@ public class ARP extends BasePacket {
 	public static short PROTO_TYPE_IP = 0x800;
 
 	public static ArpOpcode OP_REQUEST = ArpOpcode.REQUEST;
-	public static ArpOpcode OP_REPLY = ArpOpcode.REPLY;
+	public static ArpOpcode OP_REPLY = ArpOpcode.REPLY; 
 	public static ArpOpcode OP_RARP_REQUEST = ArpOpcode.REQUEST_REVERSE;
 	public static ArpOpcode OP_RARP_REPLY = ArpOpcode.REPLY_REVERSE;
 

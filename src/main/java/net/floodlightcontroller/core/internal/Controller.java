@@ -245,6 +245,7 @@ public class Controller implements IFloodlightProviderService, IStorageSourceLis
          * Calls the appropriate listeners
          */
         public void dispatch();
+        
     }
         
     /**
@@ -271,6 +272,7 @@ public class Controller implements IFloodlightProviderService, IStorageSourceLis
                         new Object[] { curControllerNodeIPs, addedControllerNodeIPs,
                             removedControllerNodeIPs }
                         );
+//				System.out.println("////////////////");
             }
             if (haListeners != null) {
                 for (IHAListener listener: haListeners.getOrderedListeners()) {

@@ -34,6 +34,9 @@ public class APManager {
 	public void addAP(AP ap) {
 		this.apSet.add(ap);
 	}
+	public int getSize(){
+		return apSet.size();
+	}
 
 	/**
 	 * get dpid set relating to the given CIDR IP

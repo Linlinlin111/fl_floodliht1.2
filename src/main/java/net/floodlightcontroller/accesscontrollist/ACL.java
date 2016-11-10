@@ -138,6 +138,7 @@ public class ACL implements IACLService, IFloodlightModule, IDeviceListener {
 			}
 		}
 		deny2Allow.put(newRule.getId(), allowRuleList);
+//		System.out.println(deny2Allow.get(newRule.getId()));
 		return false;
 	}
 
@@ -186,6 +187,7 @@ public class ACL implements IACLService, IFloodlightModule, IDeviceListener {
 	 */
 	private void enforceAddedRule(ACLRule denyRule) {
 		Set<String> dpidSet;
+//		System.out.println(apManager.getSize()+"************************");
 		if (denyRule.getNw_src() != null) {
 			dpidSet = apManager.getDpidSet(denyRule.getNw_src_prefix(),
 					denyRule.getNw_src_maskbits());
@@ -193,7 +195,7 @@ public class ACL implements IACLService, IFloodlightModule, IDeviceListener {
 			dpidSet = apManager.getDpidSet(denyRule.getNw_dst_prefix(),
 					denyRule.getNw_dst_maskbits());
 		}
-
+//		System.out.println("*-*-*-*-*-*-  "+dpidSet.size());
 		for (String dpid : dpidSet) {
 			String flowName;
 			List<Integer> allowRuleList = deny2Allow.get(denyRule.getId());
@@ -352,16 +354,19 @@ public class ACL implements IACLService, IFloodlightModule, IDeviceListener {
 	@Override
 	public void deviceAdded(IDevice device) {
 		SwitchPort[] switchPort = device.getAttachmentPoints(); 
+//		System.out.println(switchPort.toString()+" -----");
 		if (switchPort.length == 0) {
                         //Device manager does not yet know an attachment point for a device (Bug Fix) 
                         return;
                 }
 		IPv4Address[] ips = device.getIPv4Addresses();
+//		System.out.println(ips.length+" -*-*-*-");
 		if (ips.length == 0) {
 			// A new no-ip device added
 			return;
 		}
 
+		System.out.println("IN ACL ,DeviceAdd");
 		String dpid = HexString.toHexString(switchPort[0].getSwitchDPID()
 				.getLong());
 		String ip = IPv4.fromIPv4Address(ips[0].getInt());

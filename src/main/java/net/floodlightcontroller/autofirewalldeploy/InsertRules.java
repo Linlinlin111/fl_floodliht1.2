@@ -4,35 +4,19 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.projectfloodlight.openflow.protocol.OFMessage;
-import org.projectfloodlight.openflow.protocol.OFType;
-import org.projectfloodlight.openflow.types.EthType;
 import org.projectfloodlight.openflow.types.IPv4Address;
 
 import net.floodlightcontroller.autofirewalldeploy.AutoFirewallDeploy.Decision;
-import net.floodlightcontroller.core.FloodlightContext;
-import net.floodlightcontroller.core.IOFMessageListener;
-import net.floodlightcontroller.core.IOFSwitch;
 import net.floodlightcontroller.core.module.FloodlightModuleContext;
 import net.floodlightcontroller.core.module.FloodlightModuleException;
 import net.floodlightcontroller.core.module.IFloodlightModule;
 import net.floodlightcontroller.core.module.IFloodlightService;
 import net.floodlightcontroller.core.IFloodlightProviderService;
 import java.util.ArrayList;
-import java.util.concurrent.ConcurrentSkipListSet;
-import net.floodlightcontroller.packet.Ethernet;
-import net.floodlightcontroller.packet.IPv4;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import net.floodlightcontroller.core.IFloodlightProviderService;
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentSkipListSet;
-import java.util.Set;
-import net.floodlightcontroller.packet.Ethernet;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 //net.floodlightcontroller.autofirewalldeploy.InsertRules
 

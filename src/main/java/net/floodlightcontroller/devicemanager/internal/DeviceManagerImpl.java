@@ -49,6 +49,8 @@ import net.floodlightcontroller.core.IInfoProvider;
 import net.floodlightcontroller.core.IOFMessageListener;
 import net.floodlightcontroller.core.IOFSwitch;
 import net.floodlightcontroller.core.HARole;
+import net.floodlightcontroller.core.internal.OFSwitchHandlerTestBase;
+import net.floodlightcontroller.core.internal.OFSwitchManager;
 import net.floodlightcontroller.core.module.FloodlightModuleContext;
 import net.floodlightcontroller.core.module.FloodlightModuleException;
 import net.floodlightcontroller.core.module.IFloodlightModule;
@@ -1780,6 +1782,8 @@ public class DeviceManagerImpl implements IDeviceService, IOFMessageListener, IT
 			}
 			List<IDeviceListener> listeners = deviceListeners.getOrderedListeners();
 			notifyListeners(listeners, update);
+			
+			
 		}
 	 }
 

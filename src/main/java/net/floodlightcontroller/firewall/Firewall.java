@@ -384,6 +384,21 @@ IFloodlightModule {
 		} else {
 			this.rules.add(rule);
 		}
+		
+		
+		
+		/**
+		 * 输出规则的顺序
+		 */
+		
+		
+//		for(FirewallRule rul:rules){
+//			System.out.println("/*/*/*/  "+rule.action);
+//		}
+		
+		
+		
+		
 		// add rule to database
 		Map<String, Object> entry = new HashMap<String, Object>();
 		entry.put(COLUMN_RULEID, Integer.toString(rule.ruleid));

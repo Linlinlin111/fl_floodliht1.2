@@ -58,10 +58,14 @@ public class ACLRule {
 	 * its working scope is already covered by an existing rule
 	 */
 	public boolean match(ACLRule r) {
+//		System.out.println(this.tp_dst+"   "+r.tp_dst+" +++++++++++++");
 		if ((this.tp_dst == r.tp_dst || r.tp_dst == 0)
 				&& (this.nw_proto == r.nw_proto || r.nw_proto == 0)
 				&& (isSubnet(this.getNw_src(), r.getNw_src()) == true)
 				&& (isSubnet(this.getNw_dst(), r.getNw_dst()) == true)) {
+			
+//			System.out.println(this.getNw_src()+"  "+r.getNw_src()+" "+isSubnet(this.getNw_src(), r.getNw_src()) );
+//			System.out.println(this.getNw_dst()+"  "+r.getNw_dst()+" "+isSubnet(this.getNw_dst(), r.getNw_dst()));
 			return true;
 		}
 		return false;
